@@ -62,8 +62,10 @@ public class Main {
 		// Close tables
 		while (webDriver.findElement(By.xpath("//*[@id=\"IsActive2\"]/a")).getText().equalsIgnoreCase("Reset")) {
 			webDriver.findElement(By.xpath("//*[@id=\"IsActive2\"]/a")).click();
+			System.out.println("=======================");
 			System.out.println(
 					"Table " + webDriver.findElement(By.xpath("//*[@id=\"TableID\"]/a")).getText() + " closed");
+			System.out.println("=======================");
 			try {
 				TimeUnit.SECONDS.sleep(2);
 			} catch (InterruptedException e) {
@@ -71,7 +73,7 @@ public class Main {
 				e.printStackTrace();
 			}
 			webDriver.findElement(By.xpath("/html/body/div[13]/div[7]/div/button")).click();
-			
+
 		}
 		// Open tables
 		for (int i : tables) {
@@ -94,8 +96,10 @@ public class Main {
 					e.printStackTrace();
 				}
 				webDriver.findElement(By.xpath("/html/body/div[13]/div[7]/div/button")).click();
+				System.out.println("=======================");
 				System.out.println(
 						"Table " + webDriver.findElement(By.xpath("//*[@id=\"TableID\"]/a")).getText() + " opened");
+				System.out.println("=======================");
 				webDriver.findElement(By.xpath("//*[@id=\"report_form\"]/div[1]/div/table/tbody/tr/td[2]/input"))
 						.clear();
 			}
