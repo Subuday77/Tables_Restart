@@ -27,7 +27,7 @@ public class Main {
 		System.out.println("====================================");
 		System.out.println("• Press 1 to close and open tables");
 		System.out.println("• Press 2 to close tables");
-		System.out.println("• Press 3 open tables");
+		System.out.println("• Press 3 to open tables");
 		System.out.println("====================================");
 		while (choice < 49 || choice > 51) {
 			choice = sc.next().charAt(0);
