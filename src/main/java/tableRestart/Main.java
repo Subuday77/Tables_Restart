@@ -17,17 +17,17 @@ public class Main {
 		String password;
 		char choice = '0';
 		int[] tables = { 1, 2, 10, 51, 100, 120, 130, 140, 150, 170, 1000, 1001, 1010, 1200, 2400, 2410, 5001, 7000,
-				7100, 30100, 228000, 507000, 517000, 602000, 602100, 606000, 611000, 1000023 };
+				7100, 30100, 201000, 228000, 507000, 517000, 602000, 602100, 606000, 611000, 1000023 };
 		System.out.println("Username:");
 		username = sc.nextLine();
 		System.out.println("Password:");
 		password = sc.nextLine();
 		System.out.println("====================================");
-		System.out.println("Please, choose what to do");
+		System.out.println(" Please, choose what to do");
 		System.out.println("====================================");
-		System.out.println("• Press 1 to close and open tables");
-		System.out.println("• Press 2 to close tables");
-		System.out.println("• Press 3 to open tables");
+		System.out.println("- Press 1 to close and open tables");
+		System.out.println("- Press 2 to close tables");
+		System.out.println("- Press 3 to open tables");
 		System.out.println("====================================");
 		while (choice < 49 || choice > 51) {
 			choice = sc.next().charAt(0);
