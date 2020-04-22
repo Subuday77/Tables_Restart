@@ -246,15 +246,7 @@ public class Main {
 
 	public static void getTablelist(String currentList) {
 		System.out.println("Current table list:");
-		StringBuilder contentBuilder = new StringBuilder();
-
-		try (Stream<String> stream = Files.lines(Paths.get("C:\\Windows\\Temp\\tables.list"), StandardCharsets.UTF_8)) {
-			stream.forEach(s -> contentBuilder.append(s).append("\n"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		currentList = String.valueOf(contentBuilder);
+		currentList = String.valueOf(readFile());
 		System.out.println(currentList);
 
 	}
