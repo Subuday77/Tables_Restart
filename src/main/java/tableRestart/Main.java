@@ -21,16 +21,16 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Main {
 	public static void main(String[] args) {
-		
+	
 		Scanner sc = new Scanner(System.in);
-		String date = "21/04/2020";
+		String date = "02/06/2020";
 		String username;
 		String password;
 
 		char choice = '0';
 		ArrayList<Integer> defaultTables = new ArrayList<Integer>(
 				Arrays.asList(1, 2, 10, 51, 100, 120, 130, 140, 150, 170, 1000, 1001, 1010, 1200, 2400, 2410, 5001,
-						7000, 7100, 30100, 201000, 228000, 507000, 517000, 602000, 602100, 606000, 611000, 1000023));
+						7000, 7100, 30100, 201000, 227101, 228000, 507000, 517000, 602000, 602100, 606000, 611000, 1000023));
 		String listStr = org.apache.commons.lang3.StringUtils.join(defaultTables, ", ");
 
 		try {
@@ -44,8 +44,8 @@ public class Main {
 		} catch (IOException e) {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
+			
 		}
-		
 
 		String currentList = String.valueOf(readFile());
 		int[] tables = createTables(currentList);
@@ -111,17 +111,17 @@ public class Main {
 							}
 							currentList = String.valueOf(readFile());
 							tables = createTables(currentList);
-							
+
 							for (int i = 0; i < tables.length; ++i) {
-								
+
 								if (tables[i] == Integer.parseInt(table)) {
 
 									tables = ArrayUtils.removeElement(tables, tables[i]);
 									System.out.println("Table " + table + " removed");
-									
+
 									break;
 								}
-								if (i==tables.length-1) {
+								if (i == tables.length - 1) {
 									tables = ArrayUtils.add(tables, Integer.parseInt(table));
 									System.out.println("Table " + table + " added");
 									break;
@@ -263,8 +263,8 @@ public class Main {
 		}
 		return tables;
 	}
-	
-	public static StringBuilder readFile () {
+
+	public static StringBuilder readFile() {
 		StringBuilder contentBuilder = new StringBuilder();
 		try (Stream<String> stream = Files.lines(Paths.get("C:\\Windows\\Temp\\tables.list"), StandardCharsets.UTF_8)) {
 			stream.forEach(s -> contentBuilder.append(s).append("\n"));
@@ -272,6 +272,6 @@ public class Main {
 			e.printStackTrace();
 		}
 		return contentBuilder;
-		
+
 	}
 }
