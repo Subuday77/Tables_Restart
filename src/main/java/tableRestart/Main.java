@@ -23,14 +23,14 @@ public class Main {
 	public static void main(String[] args) {
 	
 		Scanner sc = new Scanner(System.in);
-		String date = "02/06/2020";
+		String date = "07/06/2020";
 		String username;
 		String password;
 
 		char choice = '0';
 		ArrayList<Integer> defaultTables = new ArrayList<Integer>(
-				Arrays.asList(1, 2, 10, 51, 100, 120, 130, 140, 150, 170, 1000, 1001, 1010, 1200, 2400, 2410, 5001,
-						7000, 7100, 30100, 201000, 227101, 228000, 507000, 517000, 602000, 602100, 606000, 611000, 1000023));
+				Arrays.asList(1, 2, 10, 51, 100, 120, 130, 140, 150, 170, 1000, 1001, 1010, 1200, 5001,
+						7000, 7100, 30100, 201000, 227101, 228000, 507000, 517000, 602000, 602100, 606000, 611000, 2400, 2410, 1000011, 1000023));
 		String listStr = org.apache.commons.lang3.StringUtils.join(defaultTables, ", ");
 
 		try {
@@ -127,7 +127,7 @@ public class Main {
 									break;
 								}
 							}
-							Arrays.sort(tables);
+							//Arrays.sort(tables);
 							currentList = Arrays.toString(tables);
 							try {
 								FileWriter myWriter = new FileWriter("C:\\Windows\\Temp\\tables.list");
